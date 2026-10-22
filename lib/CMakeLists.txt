@@ -7,7 +7,8 @@
 #
 cdrk_module( ${PROJECT_NAME} LIBRARY
              INCLUDE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/import"
-             SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/source" )
+             SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/source"
+             STRICT_ARGS ${BHOP_COMPILER_SETTINGS} )
 #
 # Glob all project files:
 # 1. Module interface units.

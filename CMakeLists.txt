@@ -26,6 +26,19 @@ include( cdrake )
 option( BHOP_ENABLE_EXCEPTIONS "Enable exceptions for bhop target." OFF )
 option( BHOP_ENABLE_RTTI "Enable rtti for bhop target." OFF )
 #
+# Set the compiler settings from the given user options.
+set( BHOP_COMPILER_SETTINGS "$<$<CONFIG:Debug>:-g3>" )
+if( ${BHOP_ENABLE_EXCEPTIONS} )
+    #
+    list( APPEND BHOP_COMPILER_SETTINGS "ENABLE_EXCEPTIONS" )
+    #
+endif()
+if( ${BHOP_ENABLE_RTTI} )
+    #
+    list( APPEND BHOP_COMPILER_SETTINGS "ENABLE_RTTI" )
+    #
+endif()
+#
 # ========================================
 # GLOBAL CONFIGURATION
 # ========================================
