@@ -1,0 +1,38 @@
+# # "cmake-lists": bhop, "author": alessandromanzini
+# Lib specific logic here.
+#
+# ========================================
+# TARGET CONFIGURATION
+# ========================================
+#
+cdrk_module( ${PROJECT_NAME} LIBRARY
+             INCLUDE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/import"
+             SOURCE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/source" )
+#
+# Glob all project files:
+# 1. Module interface units.
+cdrk_module_sources( "${MODULE_TARGET}" MODULES "*.cppm" )
+#
+# 2. Shared source files.
+# cdrk_module_sources( "${MODULE_TARGET}" SOURCES "${MODULE_SRC_DIR}/shared/*.cpp" )
+#
+# 3. PCH header file.
+cdrk_module_sources( "${MODULE_TARGET}" HEADERS "bhop/pch.hpp" )
+#
+# 4. CBridge source file.
+cdrk_module_sources( "${MODULE_TARGET}"
+                     SOURCES "compiler/${CBRIDGE_SRC_FILENAME}"
+                     NO_PEDANTIC )
+#
+#
+# ========================================
+# EXTERNAL DEPENDENCIES
+# ========================================
+#
+# GLM (math library)
+#include( fetch_glm_macro )
+#fetch_glm()
+#
+# SDL2 (graphics/input)
+#include( fetch_sdl2_macro )
+#fetch_sdl2()
