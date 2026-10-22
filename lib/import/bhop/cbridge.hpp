@@ -1,5 +1,5 @@
-#ifndef ASH_CBRIDGE_HPP
-#define ASH_CBRIDGE_HPP
+#ifndef BHOP_CBRIDGE_HPP
+#define BHOP_CBRIDGE_HPP
 
 
 #if defined( _MSC_VER )
@@ -24,4 +24,4 @@
 #endif
 
 
-#endif //!ASH_CBRIDGE_HPP
+#endif //!BHOP_CBRIDGE_HPP

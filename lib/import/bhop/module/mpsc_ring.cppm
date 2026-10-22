@@ -127,7 +127,7 @@ export namespace bhop
 
    private:
       // On the heap, so the ring stays small enough to live on any thread's stack.
-      auto const slots_ = std::make_unique<storage_type>( );
+      std::unique_ptr<storage_type> const slots_{ std::make_unique<storage_type>( ) };
 
       // Producers' line: the next position to claim.
       alignas( traits::cache_line_size_v ) std::atomic<std::size_t> tail_{ 0 };

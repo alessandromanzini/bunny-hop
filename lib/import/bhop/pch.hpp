@@ -19,6 +19,7 @@
 #include <fstream>
 #include <functional>
 #include <iostream>
+#include <limits>
 #include <list>
 #include <memory>
 #include <memory_resource>

@@ -13,7 +13,7 @@ namespace bhop::detail
    {
    public:
       using value_type = void;
-      using difference_type = ptrdiff_t;
+      using difference_type = std::ptrdiff_t;
       using pointer = void;
       using reference = void;
       using iterator_category = std::output_iterator_tag;
